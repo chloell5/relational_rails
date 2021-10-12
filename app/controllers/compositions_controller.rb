@@ -1,5 +1,6 @@
 class CompositionsController < ApplicationController
   def index
+    @compositions = Composition.all
   end
 
   def new
@@ -9,6 +10,7 @@ class CompositionsController < ApplicationController
   end
 
   def show
+    @composition = Composition.find(params[:id])
   end
 
   def edit

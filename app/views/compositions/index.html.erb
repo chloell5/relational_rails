@@ -1,0 +1,14 @@
+<h1>Compositions</h1>
+<ul>
+  <% @compositions.each do |composition| %>
+    <li>Name:
+      <%= composition.name %></li>
+    <li>Artist:
+      <%= composition.artist %></li>
+    <li>On Display?:
+      <%= composition.on_display %></li>
+    <li>Year Made:
+      <%= composition.year_made %></li>
+      <br>
+  <% end %>
+</ul>
