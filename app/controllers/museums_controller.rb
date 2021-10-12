@@ -10,6 +10,7 @@ class MuseumsController < ApplicationController
   end
 
   def show
+    @museum = Museum.find(params[:id])
   end
 
   def edit
