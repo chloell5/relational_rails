@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_10_12_003059) do
     t.string "artist"
     t.boolean "on_display"
     t.integer "year_made"
-    t.integer "museum_id"
+    t.bigint "museum_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["museum_id"], name: "index_compositions_on_museum_id"
@@ -34,4 +34,5 @@ ActiveRecord::Schema.define(version: 2021_10_12_003059) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "compositions", "museums"
 end
