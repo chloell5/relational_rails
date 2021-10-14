@@ -20,4 +20,13 @@ describe 'museums index page' do
     expect(page).to have_content(@museum.name)
     expect(page).to have_content(@museum2.name)
   end
+
+  it 'shows all museums by most recently created' do
+    expect(@museum2.name).to appear_before(@museum.name)
+  end
+
+  it 'shows created by datetime' do
+    expect(page).to have_content(@museum.created_at)
+    expect(page).to have_content(@museum2.created_at)
+  end
 end

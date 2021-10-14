@@ -1,0 +1,8 @@
+<h1><%= @museum.name %></h1>
+<% @compositions.each do |composition| %>
+<p><b>Artist:</b> <%= composition.name %></p>
+<p><b>Artist:</b> <%= composition.artist %></p>
+<p><b>On Display?: </b><%= composition.on_display %></p>
+<p><b>Year Made: </b><%= composition.year_made %></p>
+<br>
+<% end %>
