@@ -37,5 +37,5 @@
   artist:'van Gogh',
   on_display: true,
   year_made: 1889,
-  museum_id: @museum2.id
+  museum_id: @museum.id
 )
