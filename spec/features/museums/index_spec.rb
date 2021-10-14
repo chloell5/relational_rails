@@ -29,4 +29,10 @@ describe 'museums index page' do
     expect(page).to have_content(@museum.created_at)
     expect(page).to have_content(@museum2.created_at)
   end
+
+  it 'has a link to new museum' do
+    click_on 'New Museum'
+
+    expect(page).to have_current_path("/museums/new")
+  end
 end
