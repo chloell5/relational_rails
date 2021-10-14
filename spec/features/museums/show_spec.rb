@@ -10,7 +10,7 @@ describe 'museums show page' do
     @museum2 = Museum.create!(
       name: 'MOMA',
       free_admission: true,
-      donation_revenue: 7654321
+      donation_revenue: 7_654_321
     )
     Composition.create!(
       name: 'Mona Lisa',
@@ -43,5 +43,10 @@ describe 'museums show page' do
 
   it 'shows a count of compositions at museum' do
     expect(page).to have_content('Compositions: 2')
+  end
+
+  it 'links to the museums compositions page' do
+    click_on 'Museum Compositions'
+    expect(page).to have_current_path("/museums/#{@museum.id}/compositions")
   end
 end
