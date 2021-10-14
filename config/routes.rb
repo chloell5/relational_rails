@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get '/museums/:id', to: 'museums#show'
   get '/museums/:id/compositions', to: 'museum_compositions#index'
 
+  get 'gyms', to: 'gyms#index'
+  get 'activities', to: 'activities#index'
+
   get '/compositions', to: 'compositions#index'
   get '/compositions/:id', to: 'compositions#show'
 end
