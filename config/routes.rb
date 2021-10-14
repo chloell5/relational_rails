@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   get 'compositions', to: 'compositions#index'
 
   get 'gyms', to: 'gyms#index'
-  get 'classes', to: 'classes#index'
+  get 'activities', to: 'activities#index'
 
 end

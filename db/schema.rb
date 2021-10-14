@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_14_001325) do
+ActiveRecord::Schema.define(version: 2021_10_14_182625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "classes", force: :cascade do |t|
+  create_table "activities", force: :cascade do |t|
     t.string "name"
     t.string "day"
     t.time "time"
     t.integer "max_number"
     t.boolean "drop_in"
     t.bigint "gym_id"
-    t.index ["gym_id"], name: "index_classes_on_gym_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["gym_id"], name: "index_activities_on_gym_id"
   end
 
   create_table "compositions", force: :cascade do |t|
@@ -55,6 +55,6 @@ ActiveRecord::Schema.define(version: 2021_10_14_001325) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "classes", "gyms"
+  add_foreign_key "activities", "gyms"
   add_foreign_key "compositions", "museums"
 end
