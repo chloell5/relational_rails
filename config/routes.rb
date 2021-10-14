@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'gyms', to: 'gyms#index'
   get 'gyms/:id', to: 'gyms#show'
   get 'activities', to: 'activities#index'
+  get 'activities', to: 'activities#show'
 
   get '/compositions', to: 'compositions#index'
   get '/compositions/:id', to: 'compositions#show'
