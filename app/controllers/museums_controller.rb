@@ -15,4 +15,9 @@ class MuseumsController < ApplicationController
 
   def edit
   end
+
+  def museum_compositions
+    @museum = Museum.find(params[:id])
+    @compositions = @museum.compositions
+  end
 end
