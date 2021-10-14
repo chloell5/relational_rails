@@ -1,6 +1,6 @@
 class MuseumsController < ApplicationController
   def index
-    @museums = Museum.all
+    @museums = Museum.all.order_created
   end
 
   def new
@@ -10,6 +10,7 @@ class MuseumsController < ApplicationController
   end
 
   def show
+    @museum = Museum.find(params[:id])
   end
 
   def edit
