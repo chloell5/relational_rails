@@ -12,6 +12,21 @@ describe 'museums show page' do
       free_admission: true,
       donation_revenue: 7654321
     )
+    Composition.create!(
+      name: 'Mona Lisa',
+      artist: 'da Vinci',
+      on_display: true,
+      year_made: 1503,
+      museum_id: @museum.id
+    )
+
+    Composition.create!(
+      name: 'The Starry Night',
+      artist: 'van Gogh',
+      on_display: true,
+      year_made: 1889,
+      museum_id: @museum.id
+    )
 
     visit "/museums/#{@museum.id}"
   end
@@ -24,5 +39,9 @@ describe 'museums show page' do
     expect(page).to_not have_content(@museum2.name)
     expect(page).to_not have_content("Free Admission?: #{@museum2.free_admission}")
     expect(page).to_not have_content("Donation Revenue: $#{@museum2.donation_revenue}")
+  end
+
+  it 'shows a count of compositions at museum' do
+    expect(page).to have_content('Compositions: 2')
   end
 end
