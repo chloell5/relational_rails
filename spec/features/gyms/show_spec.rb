@@ -1,15 +1,21 @@
 require 'rails_helper'
 
-RSpec.describe Gym do
+RSpec.describe "Gym's show page" do
 
-  it 'has a record of the gyms in the system' do
+  it 'can show the gym, id, and attributes' do
     gym_1 = Gym.create!(name: 'Peak Fitness', location: 'Buena Vista', open: true, rank: 1)
     gym_2 = Gym.create!(name: 'Yoga Tonic', location: 'Salida', open: true, rank: 1)
 
-    visit '/gyms'
+    visit '/gyms/:id'
     expect(page).to have_content(gym_1.name)
-    expect(page).to have_content(gym_2.name)
+    expect(page).to have_content(gym_1.location)
+    expect(page).to have_content(gym_1.open)
+    expect(page).to have_content(gym_1.rank)
+
     #save_and_open_page
+
   end
+
+
 
 end
