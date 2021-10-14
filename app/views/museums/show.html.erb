@@ -1,0 +1,6 @@
+<h1><%= @museum.name %></h1>
+
+<p><b>Free Admission?: </b><%= @museum.free_admission %></p>
+<p><b>Donation Revenue: </b>$<%= @museum.donation_revenue %></p>
+<p><b>Compositions: </b><%= @museum.count %></p>
+<p><%= link_to 'Museum Compositions', "/museums/#{@museum.id}/compositions" %></p>
