@@ -9,7 +9,9 @@ RSpec.describe Gym do
     visit '/gyms'
     expect(page).to have_content(gym_1.name)
     expect(page).to have_content(gym_2.name)
-    #save_and_open_page
+    save_and_open_page
   end
+
+
 
 end
