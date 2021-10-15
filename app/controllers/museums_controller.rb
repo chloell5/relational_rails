@@ -6,10 +6,6 @@ class MuseumsController < ApplicationController
   def new
   end
 
-  def show
-    @museum = Museum.find(params[:id])
-  end
-
   def create
     Museum.create!(
       name: params[:name],
@@ -17,6 +13,25 @@ class MuseumsController < ApplicationController
       donation_revenue: params[:donation_revenue],
     )
 
-    redirect_to '/museums'
+    redirect_to "/museums"
+  end
+
+  def edit
+    @museum = Museum.find(params[:id])
+  end
+
+  def update
+    museum = Museum.find(params[:id])
+    museum.update(
+      name: params[:name],
+      free_admission: params[:free_admission],
+      donation_revenue: params[:donation_revenue]
+    )
+
+    redirect_to "/museums/#{params[:id]}"
+  end
+
+  def show
+    @museum = Museum.find(params[:id])
   end
 end

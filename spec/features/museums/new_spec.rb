@@ -9,5 +9,7 @@ describe 'museums show page' do
     fill_in 'donation_revenue', with: 1234
 
     click_button 'Create Museum'
+    expect(page).to have_content('Test Museum')
+    expect(page).to have_current_path("/museums")
   end
 end
