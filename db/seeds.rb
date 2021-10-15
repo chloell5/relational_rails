@@ -10,10 +10,17 @@
   free_admission: false,
   donation_revenue: 12345678
 )
+
 @museum2 = Museum.create!(
   name: 'MOMA',
   free_admission: true,
   donation_revenue: 7654321
+)
+
+@museum3  = Museum.create!(
+  name: 'State Hermitage Museum',
+  free_admission: true,
+  donation_revenue: 765432
 )
 
 @comp = Composition.create!(
@@ -38,4 +45,28 @@
   on_display: true,
   year_made: 1889,
   museum_id: @museum.id
+)
+
+@comp4 = Composition.create!(
+  name:'The Boulevard Montmarte in Paris',
+  artist:'Pissarro',
+  on_display: false,
+  year_made: 1897,
+  museum_id: @museum3.id
+)
+
+@comp5 = Composition.create!(
+  name:'Thatched Cottages and Houses',
+  artist:'van Gogh',
+  on_display: true,
+  year_made: 1890,
+  museum_id: @museum3.id
+)
+
+@comp6 = Composition.create!(
+  name:'The Return of the Prodigal Son',
+  artist:'Rembrandt',
+  on_display: true,
+  year_made: 1889,
+  museum_id: @museum3.id
 )
