@@ -14,6 +14,7 @@ RSpec.describe "Gym's show page" do
 
     expect(page).to_not have_content(gym_2.name)
     expect(page).to_not have_content(gym_2.location)
+    save_and_open_page
   end
 
 
