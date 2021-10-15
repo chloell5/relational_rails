@@ -5,12 +5,12 @@ describe 'compositions index page' do
     museum = Museum.create!(
       name: 'The Louvre',
       free_admission: false,
-      donation_revenue: 12345678
+      donation_revenue: 12_345_678
     )
     museum2 = Museum.create!(
       name: 'MOMA',
       free_admission: true,
-      donation_revenue: 7654321
+      donation_revenue: 7_654_321
     )
 
     comp = Composition.create!(
@@ -22,8 +22,8 @@ describe 'compositions index page' do
     )
 
     comp2 = Composition.create!(
-      name:'The Persistence of Memory',
-      artist:'Dali',
+      name: 'The Persistence of Memory',
+      artist: 'Dali',
       on_display: false,
       year_made: 1931,
       museum_id: museum2.id
@@ -35,6 +35,7 @@ describe 'compositions index page' do
     expect(page).to have_content(comp.artist)
     expect(page).to have_content(comp.on_display)
     expect(page).to have_content(comp.year_made)
+    
     expect(page).to have_content(comp2.name)
     expect(page).to have_content(comp2.artist)
     expect(page).to have_content(comp2.on_display)

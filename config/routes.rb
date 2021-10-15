@@ -3,10 +3,11 @@ Rails.application.routes.draw do
 
   get '/museums', to: 'museums#index'
   get '/museums/new', to: 'museums#new'
+  get '/museums/:id/edit', to: 'museums#edit'
   get '/museums/:id', to: 'museums#show'
   get '/museums/:id/compositions', to: 'museum_compositions#index'
-  post 'museums', to: 'museums#create'
-
+  post '/museums', to: 'museums#create'
+  patch '/museums/:id', to: 'museums#update'
 
   get 'gyms', to: 'gyms#index'
   get 'gyms/:id', to: 'gyms#show'

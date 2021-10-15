@@ -1,11 +1,11 @@
-<h1>New Museum</h1>
+<h1>Edit Museum</h1>
 
-<%= form_with url: '/museums', method: :post, local: true do |form| %>
+<%= form_with url: "/museums/#{@museum.id}", method: :patch, local: true do |form| %>
 <%= form.label :name %>
 <%= form.text_field :name %><br>
 <%= form.label :free_admission %>
 <%= form.check_box :free_admission %><br>
 <%= form.label :donation_revenue %>
 <%= form.number_field :donation_revenue %><br>
-<%= form.submit 'Create Museum' %>
+<%= form.submit 'Edit Museum' %>
 <% end %>

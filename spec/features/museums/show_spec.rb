@@ -47,7 +47,13 @@ describe 'museums show page' do
 
   it 'links to the museums compositions page' do
     click_on 'Museum Compositions'
-    
+
     expect(page).to have_current_path("/museums/#{@museum.id}/compositions")
+  end
+
+  it 'links to the museums edit page' do
+    click_on 'Edit Museum'
+
+    expect(page).to have_current_path("/museums/#{@museum.id}/edit")
   end
 end
