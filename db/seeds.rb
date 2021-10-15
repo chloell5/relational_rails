@@ -8,19 +8,19 @@
 @museum = Museum.create!(
   name: 'The Louvre',
   free_admission: false,
-  donation_revenue: 12345678
+  donation_revenue: 12_345_678
 )
 
 @museum2 = Museum.create!(
   name: 'MOMA',
   free_admission: true,
-  donation_revenue: 7654321
+  donation_revenue: 7_654_321
 )
 
-@museum3  = Museum.create!(
+@museum3 = Museum.create!(
   name: 'State Hermitage Museum',
   free_admission: true,
-  donation_revenue: 765432
+  donation_revenue: 765_432
 )
 
 @comp = Composition.create!(
@@ -32,40 +32,40 @@
 )
 
 @comp2 = Composition.create!(
-  name:'The Persistence of Memory',
-  artist:'Dali',
+  name: 'The Persistence of Memory',
+  artist: 'Dali',
   on_display: false,
   year_made: 1931,
   museum_id: @museum2.id
 )
 
 @comp3 = Composition.create!(
-  name:'The Starry Night',
-  artist:'van Gogh',
+  name: 'The Starry Night',
+  artist: 'van Gogh',
   on_display: true,
   year_made: 1889,
   museum_id: @museum.id
 )
 
 @comp4 = Composition.create!(
-  name:'The Boulevard Montmarte in Paris',
-  artist:'Pissarro',
+  name: 'The Boulevard Montmarte in Paris',
+  artist: 'Pissarro',
   on_display: false,
   year_made: 1897,
   museum_id: @museum3.id
 )
 
 @comp5 = Composition.create!(
-  name:'Thatched Cottages and Houses',
-  artist:'van Gogh',
+  name: 'Thatched Cottages and Houses',
+  artist: 'van Gogh',
   on_display: true,
   year_made: 1890,
   museum_id: @museum3.id
 )
 
 @comp6 = Composition.create!(
-  name:'The Return of the Prodigal Son',
-  artist:'Rembrandt',
+  name: 'The Return of the Prodigal Son',
+  artist: 'Rembrandt',
   on_display: true,
   year_made: 1889,
   museum_id: @museum3.id

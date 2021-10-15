@@ -10,6 +10,6 @@ describe 'museums show page' do
 
     click_button 'Create Museum'
     expect(page).to have_content('Test Museum')
-    expect(page).to have_current_path("/museums")
+    expect(page).to have_current_path('/museums')
   end
 end

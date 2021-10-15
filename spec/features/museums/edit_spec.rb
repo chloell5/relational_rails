@@ -5,7 +5,7 @@ describe 'museums edit page' do
     museum = Museum.create!(
       name: 'The Louvre',
       free_admission: false,
-      donation_revenue: 12345678
+      donation_revenue: 12_345_678
     )
 
     visit "/museums/#{museum.id}/edit"
