@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Gym's show page" do
+RSpec.describe "Gyms show page" do
 
   it 'can show the gym, id, and attributes' do
     gym_1 = Gym.create!(name: 'Peak Fitness', location: 'Buena Vista', open: true, rank: 1)

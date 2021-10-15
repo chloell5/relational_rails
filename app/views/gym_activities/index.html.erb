@@ -1,0 +1,10 @@
+<h1><%= @gym.name %></h1>
+<% @activities.each do |activity| %>
+<p><b>Name: </b> <%= activity.name %></p>
+<p><b>Day: </b> <%= activity.day %></p>
+<p><b>Time: </b><%= activity.time %></p>
+<p><b>Maximum Number: </b><%= activity.max_number %></p>
+<p><b>Drop-In: </b><%= activity.drop_in %></p>
+<p><b>Gym ID: </b><%= activity.gym_id %></p>
+<br>
+<% end %>

@@ -1,14 +1,10 @@
 <h1>Activities</h1>
 
 <% @activities.each do |activity| %>
-  <%= activity.name %><br>
-  <%= activity.day %><br>
-  <%= activity.time %><br>
-  <%= activity.max_number %><br>
-  <%= activity.drop_in %><br>
-  <%= activity.gym_id %><br><br>
-
-
-
-
+  <p><b>Name: <%= activity.name %><br>
+  <p><b>Day: <%= activity.day %><br>
+  <p><b>Time: <%= activity.time %><br>
+  <p><b>Maximum Number: <%= activity.max_number %><br>
+  <p><b>Drop-In: <%= activity.drop_in %><br>
+  <p><b>Gym ID: <%= activity.gym_id %><br><br>
 <% end %>
