@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Gym do
 
-  xit 'has a record of the gyms in the system' do
+it 'has a record of the gyms in the system' do
     gym_1 = Gym.create!(name: 'Peak Fitness', location: 'Buena Vista', open: true, rank: 1)
     gym_2 = Gym.create!(name: 'Yoga Tonic', location: 'Salida', open: true, rank: 1)
 
@@ -22,8 +22,6 @@ RSpec.describe Gym do
     visit '/gyms'
 
     expect(gym_2.name).to appear_before(gym_1.name)
-
-
     end
 
 
