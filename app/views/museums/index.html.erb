@@ -1,6 +1,8 @@
 <h1>Museums</h1>
 
 <% @museums.each do |museum| %>
-<%= link_to museum.name, "#{museum.id}" %>
-Created at: <%= museum.created_at %><br>
+  <%= link_to museum.name, "museums/#{museum.id}" %>
+  Created at:
+  <%= museum.created_at %><br>
 <% end %>
+<%= link_to 'New Museum', '/museums/new' %>

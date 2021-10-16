@@ -5,12 +5,12 @@ describe 'museums index page' do
     @museum = Museum.create!(
       name: 'The Louvre',
       free_admission: false,
-      donation_revenue: 12345678
+      donation_revenue: 12_345_678
     )
     @museum2 = Museum.create!(
       name: 'MOMA',
       free_admission: true,
-      donation_revenue: 7654321
+      donation_revenue: 7_654_321
     )
 
     visit '/museums'
@@ -28,5 +28,11 @@ describe 'museums index page' do
   it 'shows created by datetime' do
     expect(page).to have_content(@museum.created_at)
     expect(page).to have_content(@museum2.created_at)
+  end
+
+  it 'has a link to new museum' do
+    click_on 'New Museum'
+
+    expect(page).to have_current_path('/museums/new')
   end
 end
