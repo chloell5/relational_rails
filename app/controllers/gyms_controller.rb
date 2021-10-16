@@ -1,16 +1,12 @@
 class GymsController < ApplicationController
 
   def index
-    @gyms = Gym.all
+    @gyms = Gym.all.order(created_at: :desc)
   end
 
   def show
-    @gyms = Gym.find(params[:id])
-  end
-
-  def activities
-    @gym = Gym.find_by(id: params[:id])
-    @gym_activities = @gym.activities
+    @gym = Gym.find(params[:id])
+    @activity_count = @gym.activities.count
   end
 
 end

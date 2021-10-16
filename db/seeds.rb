@@ -5,6 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+require 'factory_bot_rails'
+
+#Gym.destroy_all
+3.times do
+  FactoryBot.create(:gym)
+end
+
+5.times do
+  FactoryBot.create(:activity)
+end
+
 @museum = Museum.create!(
   name: 'The Louvre',
   free_admission: false,
