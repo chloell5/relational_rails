@@ -3,4 +3,5 @@
 <p><b>open: <%= @gym.open %></p>
 <p><b>Rank: <%= @gym.rank %></p>
 <p><b>Number of Activities: <%= @activity_count %></p>
-<a href=<%="/gyms/#{gym.id}/activities" %> >Activities</a>
+<br>
+<p><%= link_to 'Activities', "/gyms/#{@gym.id}/activities" %></p>

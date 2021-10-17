@@ -1,6 +1,7 @@
 <h1>Gyms</h1>
 
 <% @gyms.each do |gym| %>
-  <p><b><%= gym.name %><br>
-    <p><b><a href= <%="/gyms/#{gym.id}/activities"%> >Activities</a><br>
+  <p><b><%= link_to gym.name, "/gyms/#{gym.id}" %><br>
 <% end %>
+
+<%= link_to 'New Gym', '/gyms/new' %>

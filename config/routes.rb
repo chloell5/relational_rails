@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   patch '/museums/:id', to: 'museums#update'
 
   get '/gyms', to: 'gyms#index'
+  get '/gyms/new', to: 'gyms#new'
+  post '/gyms', to: 'gyms#create'
   get '/gyms/:id', to: 'gyms#show'
 
   get '/activities', to: 'activities#index'
