@@ -8,13 +8,18 @@ class GymsController < ApplicationController
   end
 
   def create
-    gym = Gym.create(name: params[:name])
+    gym = Gym.create!(gym_params)
     redirect_to "/gyms"
   end
 
   def show
     @gym = Gym.find(params[:id])
     @activity_count = @gym.activities.count
+  end
+
+  def gym_params
+    #require "pry"; binding.pry
+    params.permit(:name, :location, :open, :rank)
   end
 
 end
