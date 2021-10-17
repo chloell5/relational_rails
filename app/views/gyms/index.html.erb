@@ -1,5 +1,6 @@
 <h1>Gyms</h1>
 
 <% @gyms.each do |gym| %>
-  <%= gym.name %><br>
+  <p><b><%= gym.name %><br>
+    <p><b><a href= <%="/gyms/#{gym.id}/activities"%> >Activities</a><br>
 <% end %>
