@@ -21,6 +21,7 @@ class MuseumsController < ApplicationController
 
   def update
     museum = Museum.find(params[:id])
+    
     museum.update(
       name: params[:name],
       free_admission: params[:free_admission],
