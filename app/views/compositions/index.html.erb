@@ -3,7 +3,7 @@
   <% @compositions.each do |composition| %>
   <% if composition.on_display == true %>
     <li>Name:
-      <%= composition.name %></li>
+      <%= link_to composition.name, "compositions/#{composition.id}" %></li>
     <li>Artist:
       <%= composition.artist %></li>
     <li>On Display?:
