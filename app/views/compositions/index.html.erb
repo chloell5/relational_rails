@@ -1,6 +1,7 @@
 <h1>Compositions</h1>
 <ul>
   <% @compositions.each do |composition| %>
+  <% if composition.on_display == true %>
     <li>Name:
       <%= composition.name %></li>
     <li>Artist:
@@ -10,5 +11,6 @@
     <li>Year Made:
       <%= composition.year_made %></li>
     <br>
+  <% end %>
   <% end %>
 </ul>
