@@ -3,5 +3,5 @@
 <% @gyms.each do |gym| %>
   <p><b><%= link_to gym.name, "/gyms/#{gym.id}" %><br>
 <% end %>
-
+<br>
 <%= link_to 'New Gym', '/gyms/new' %>
