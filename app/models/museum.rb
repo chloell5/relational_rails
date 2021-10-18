@@ -1,5 +1,5 @@
 class Museum < ApplicationRecord
-  has_many :compositions
+  has_many :compositions, dependent: :destroy
 
   def count
     compositions.count

@@ -56,4 +56,10 @@ describe 'museums show page' do
 
     expect(page).to have_current_path("/museums/#{@museum.id}/edit")
   end
+
+  it 'has delete functionality' do
+    click_on 'Delete Museum'
+
+    expect(page).to_not have_content(@museum.name)
+  end
 end

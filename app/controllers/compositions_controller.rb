@@ -25,4 +25,11 @@ class CompositionsController < ApplicationController
 
     redirect_to "/compositions/#{composition.id}"
   end
+
+  def destroy
+    composition = Composition.find(params[:id])
+    composition.destroy!
+
+    redirect_to '/compositions'
+  end
 end

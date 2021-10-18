@@ -34,4 +34,11 @@ class MuseumsController < ApplicationController
   def show
     @museum = Museum.find(params[:id])
   end
+
+  def destroy
+    museum = Museum.find(params[:id])
+    museum.destroy!
+
+    redirect_to '/museums'
+  end
 end

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post '/museums/:id/compositions', to: 'museum_compositions#create'
   post '/museums', to: 'museums#create'
   patch '/museums/:id', to: 'museums#update'
+  delete '/museums/:id', to: 'museums#destroy'
 
   get '/gyms', to: 'gyms#index'
   get '/gyms/new', to: 'gyms#new'
@@ -27,4 +28,5 @@ Rails.application.routes.draw do
   get '/compositions/:id', to: 'compositions#show'
   get '/compositions/:id/edit', to: 'compositions#edit'
   patch '/compositions/:id', to: 'compositions#update'
+  delete '/compositions/:id', to: 'compositions#destroy'
 end

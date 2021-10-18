@@ -11,3 +11,5 @@
   </b><%= @composition.year_made %></p>
 <p>
   <%= link_to 'Update Composition', "/compositions/#{@composition.id}/edit" %></p>
+  <p>
+    <%= link_to 'Delete Composition', "/compositions/#{@composition.id}", method: :delete %></p>
