@@ -9,7 +9,17 @@ class GymsController < ApplicationController
 
   def create
     gym = Gym.create!(gym_params)
-    redirect_to "/gyms"
+    redirect_to '/gyms'
+  end
+
+  def edit
+    @gym = Gym.find(params[:id])
+  end
+
+  def update
+    @gym = Gym.find(params[:id])
+    @gym.update(gym_params)
+    redirect_to "/gyms/#{@gym.id}"
   end
 
   def show
@@ -17,9 +27,10 @@ class GymsController < ApplicationController
     @activity_count = @gym.activities.count
   end
 
-  def gym_params
-    #require "pry"; binding.pry
-    params.permit(:name, :location, :open, :rank)
-  end
+  private
+
+    def gym_params
+      params.permit(:name, :location, :open, :rank)
+    end
 
 end
