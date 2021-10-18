@@ -10,6 +10,8 @@
       <%= composition.on_display %></li>
     <li>Year Made:
       <%= composition.year_made %></li>
+    <%= link_to "Update #{composition.name}", "/compositions/#{composition.id}/edit" %>
+    <br>
     <br>
   <% end %>
   <% end %>
