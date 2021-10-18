@@ -52,7 +52,7 @@ describe 'museums show page' do
   end
 
   it 'links to the museums edit page' do
-    click_on 'Edit Museum'
+    click_on 'Update Museum'
 
     expect(page).to have_current_path("/museums/#{@museum.id}/edit")
   end
