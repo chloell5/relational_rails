@@ -15,15 +15,4 @@ RSpec.describe Gym do
 
   end
 
-  # it 'links to the each activities page' do
-  #   gym_1 = Gym.create!(name: 'Peak Fitness', location: 'Buena Vista', open: true, rank: 1, id: 1)
-  #   time = Time.new(2021, 4, 2)
-  #
-  #   activity_1 = Activity.create!(name: 'Yoga', day: 'Tuesday', time: time, max_number: 15, drop_in: true, gym_id: gym_1.id: 1)
-  #   activity_2 = Activity.create!(name: 'Intensity Train', day: 'Thursday', time: '8:15', max_number: 10, drop_in: true, gym_id: 1)
-  #
-  #   visit "/gyms/#{gym_1.id}/activities"
-  #
-  #   click_on
-  # end
 end

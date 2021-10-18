@@ -28,10 +28,6 @@ RSpec.describe "Gyms show page" do
     expect(page).to have_content("Number of Activities: 2")
   end
 
-  it 'shows a link that takes me to activity index' do
-
-  end 
-
-
+  
 
 end
