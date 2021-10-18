@@ -12,6 +12,8 @@
   <p>
     <b>Year Made:
     </b><%= composition.year_made %></p>
+  <p>
+  <%= link_to 'Delete Composition', "/compositions/#{composition.id}", method: :delete %></p>
   <br>
 <% end %>
 <%= link_to 'Sort Alphabetically by Name', "/museums/#{@museum.id}/compositions?order=alpha" %>
