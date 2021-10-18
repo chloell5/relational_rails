@@ -35,4 +35,9 @@ describe 'museums index page' do
 
     expect(page).to have_current_path('/museums/new')
   end
+
+  it 'has link to update museum' do
+    expect(page).to have_content("Update #{@museum.name}")
+    expect(page).to have_content("Update #{@museum2.name}")
+  end
 end
