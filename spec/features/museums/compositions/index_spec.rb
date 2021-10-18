@@ -43,4 +43,18 @@ describe 'museum compositions index page' do
     expect(page).to_not have_content("On Display?: #{comp2.on_display}")
     expect(page).to_not have_content("Year Made: #{comp2.year_made}")
   end
+
+  it 'has link for new composition' do
+    museum = Museum.create!(
+      name: 'The Louvre',
+      free_admission: false,
+      donation_revenue: 12_345_678
+    )
+
+    visit "/museums/#{museum.id}/compositions"
+
+    click_link 'New Composition'
+
+    expect(page).to have_current_path("/museums/#{museum.id}/compositions/new")
+  end
 end
