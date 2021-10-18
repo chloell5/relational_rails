@@ -4,7 +4,23 @@ class GymActivitiesController < ApplicationController
     @activities = @gym.activities
   end
 
-  def show
-
+  def new
+    @gym = Gym.find(params[:id])
   end
+
+  def create
+    @gym = Gym.find(params[:id])
+    activity = @gym.activities.create!(activity_params)
+    redirect_to "/gyms/#{@gym.id}/activities"
+  end
+
+  def show
+  end
+
+  private
+
+    def activity_params
+      params.permit(:name, :day, :time, :drop_in, :max_number)
+    end
+
 end
