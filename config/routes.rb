@@ -25,4 +25,6 @@ Rails.application.routes.draw do
 
   get '/compositions', to: 'compositions#index'
   get '/compositions/:id', to: 'compositions#show'
+  get '/compositions/:id/edit', to: 'compositions#edit'
+  patch '/compositions/:id', to: 'compositions#update'
 end

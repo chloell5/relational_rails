@@ -41,4 +41,26 @@ describe 'compositions index page' do
     expect(page).to_not have_content("On Display?: $#{comp2.on_display}")
     expect(page).to_not have_content("Year Made: #{comp2.year_made}")
   end
+
+  it 'has update button' do
+    museum = Museum.create!(
+      name: 'The Louvre',
+      free_admission: false,
+      donation_revenue: 12_345_678
+    )
+
+    comp = Composition.create!(
+      name: 'Mona Lisa',
+      artist: 'da Vinci',
+      on_display: true,
+      year_made: 1503,
+      museum_id: museum.id
+    )
+
+    visit "/compositions/#{comp.id}"
+
+    click_link 'Update Composition'
+
+    expect(page).to have_current_path("/compositions/#{comp.id}/edit")
+  end
 end
