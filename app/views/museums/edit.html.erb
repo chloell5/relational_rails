@@ -2,10 +2,10 @@
 
 <%= form_with url: "/museums/#{@museum.id}", method: :patch, local: true do |form| %>
 <%= form.label :name %>
-<%= form.text_field :name %><br>
+<%= form.text_field :name, value: @museum.name %><br>
 <%= form.label :free_admission %>
-<%= form.check_box :free_admission %><br>
+<%= form.check_box :free_admission, value: @museum.free_admission %><br>
 <%= form.label :donation_revenue %>
-<%= form.number_field :donation_revenue %><br>
+<%= form.number_field :donation_revenue, value: @museum.donation_revenue %><br>
 <%= form.submit 'Update Museum' %>
 <% end %>
