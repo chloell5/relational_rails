@@ -2,6 +2,7 @@ class MuseumCompositionsController < ApplicationController
   def index
     @museum = Museum.find(params[:id])
     @compositions = @museum.compositions
+    @compositions = @museum.order_compositions if params[:order]
   end
 
   def new

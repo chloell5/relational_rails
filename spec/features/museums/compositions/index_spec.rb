@@ -57,4 +57,43 @@ describe 'museum compositions index page' do
 
     expect(page).to have_current_path("/museums/#{museum.id}/compositions/new")
   end
+
+  it 'has alphabetize functionality' do
+    museum = Museum.create!(
+      name: 'The Louvre',
+      free_admission: false,
+      donation_revenue: 12_345_678
+    )
+
+    comp = Composition.create!(
+      name: 'The Starry Night',
+      artist: 'van Gogh',
+      on_display: true,
+      year_made: 1889,
+      museum_id: museum.id
+    )
+
+    comp2 = Composition.create!(
+      name: 'Mona Lisa',
+      artist: 'da Vinci',
+      on_display: true,
+      year_made: 1503,
+      museum_id: museum.id
+    )
+
+    comp3 = Composition.create!(
+      name: 'The Persistence of Memory',
+      artist: 'Dali',
+      on_display: true,
+      year_made: 1931,
+      museum_id: museum.id
+    )
+
+    visit "/museums/#{museum.id}/compositions"
+
+    click_on 'Sort Alphabetically by Name'
+
+    expect(comp2.name).to appear_before(comp3.name)
+    expect(comp3.name).to appear_before(comp.name)
+  end
 end

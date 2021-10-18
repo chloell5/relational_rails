@@ -14,5 +14,5 @@
     </b><%= composition.year_made %></p>
   <br>
 <% end %>
-
+<%= link_to 'Sort Alphabetically by Name', "/museums/#{@museum.id}/compositions?order=alpha" %>
 <%= link_to 'New Composition', "/museums/#{@museum.id}/compositions/new" %>
