@@ -16,7 +16,6 @@ RSpec.describe Activity do
     expect(page).to have_content(activity_1.max_number)
     expect(page).to have_content(activity_1.drop_in)
     expect(page).to have_content(activity_1.gym_id)
-    save_and_open_page
   end
 
 end

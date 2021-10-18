@@ -9,7 +9,6 @@ it 'has a record of the gyms in the system' do
     visit '/gyms'
     expect(page).to have_content(gym_1.name)
     expect(page).to have_content(gym_2.name)
-    save_and_open_page
   end
 
   it 'can return gyms in order of most recently created' do

@@ -22,8 +22,6 @@ RSpec.describe "Activities show page" do
     expect(page).to_not have_content(activity_2.name)
     expect(page).to_not have_content(activity_2.day)
     expect(page).to_not have_content(activity_2.time)
-
-    save_and_open_page
   end
 
 
