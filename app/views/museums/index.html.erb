@@ -8,6 +8,8 @@
   <br>
   <%= link_to "Update #{museum.name}", "/museums/#{museum.id}/edit" %>
   <br>
+  <%= link_to "Delete #{museum.name}", "/museums/#{museum.id}", method: :delete %>
+  <br>
   <br>
 <% end %>
 <%= link_to 'New Museum', '/museums/new' %>

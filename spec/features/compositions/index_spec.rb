@@ -58,7 +58,29 @@ describe 'compositions index page' do
     )
 
     visit '/compositions'
-    
+
     expect(page).to have_content("Update #{comp.name}")
+  end
+
+  it 'has delete functionality' do
+    museum = Museum.create!(
+      name: 'The Louvre',
+      free_admission: false,
+      donation_revenue: 12_345_678
+    )
+
+    comp = Composition.create!(
+      name: 'Mona Lisa',
+      artist: 'da Vinci',
+      on_display: true,
+      year_made: 1503,
+      museum_id: museum.id
+    )
+
+    visit '/compositions'
+
+    click_on "Delete #{comp.name}"
+
+    expect(page).to_not have_content(comp.name)
   end
 end
