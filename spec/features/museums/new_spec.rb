@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'museums show page' do
+describe 'museums new page' do
   it 'has forms for each attribute' do
     visit '/museums/new'
 

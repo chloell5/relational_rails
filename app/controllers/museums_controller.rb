@@ -21,16 +21,24 @@ class MuseumsController < ApplicationController
 
   def update
     museum = Museum.find(params[:id])
+
     museum.update(
       name: params[:name],
       free_admission: params[:free_admission],
       donation_revenue: params[:donation_revenue]
     )
 
-    redirect_to "/museums/#{params[:id]}"
+    redirect_to "/museums/#{museum.id}"
   end
 
   def show
     @museum = Museum.find(params[:id])
+  end
+
+  def destroy
+    museum = Museum.find(params[:id])
+    museum.destroy!
+
+    redirect_to '/museums'
   end
 end
