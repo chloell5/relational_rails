@@ -52,8 +52,14 @@ describe 'museums show page' do
   end
 
   it 'links to the museums edit page' do
-    click_on 'Edit Museum'
+    click_on 'Update Museum'
 
     expect(page).to have_current_path("/museums/#{@museum.id}/edit")
+  end
+
+  it 'has delete functionality' do
+    click_on 'Delete Museum'
+
+    expect(page).to_not have_content(@museum.name)
   end
 end

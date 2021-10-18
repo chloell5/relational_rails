@@ -14,7 +14,7 @@ describe 'museums edit page' do
     check 'free_admission'
     fill_in 'donation_revenue', with: 1234
 
-    click_button 'Edit Museum'
+    click_button 'Update Museum'
 
     expect(page).to have_content('Test Museum')
     expect(page).to have_current_path("/museums/#{museum.id}")
