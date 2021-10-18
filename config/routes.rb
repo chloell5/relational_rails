@@ -17,12 +17,12 @@ Rails.application.routes.draw do
   patch '/gyms/:id', to: 'gyms#update'
 
   get '/activities', to: 'activities#index'
-  get '/activities', to: 'activities#show'
+  #get '/activities', to: 'activities#show'
   get '/activities/:id', to: 'activities#show'
 
-  get '/gyms/:id/activities', to: 'activities#index'
-  #get '/gyms/:id/activities', to: 'gym_activities#index'
-
+  get '/gyms/:id/activities', to: 'gym_activities#index'
+  get '/gyms/:id/activities/new', to: 'gym_activities#new'
+  post '/gyms/:id/activities/', to: 'gym_activities#create'
 
   get '/compositions', to: 'compositions#index'
   get '/compositions/:id', to: 'compositions#show'
