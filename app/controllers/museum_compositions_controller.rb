@@ -3,6 +3,7 @@ class MuseumCompositionsController < ApplicationController
     @museum = Museum.find(params[:id])
     @compositions = @museum.compositions
     @compositions = @museum.order_compositions if params[:order]
+    @compositions = @compositions.over_year(params[:earliest_year_made]) if params[:earliest_year_made]
   end
 
   def new

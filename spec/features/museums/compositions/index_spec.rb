@@ -96,4 +96,56 @@ describe 'museum compositions index page' do
     expect(comp2.name).to appear_before(comp3.name)
     expect(comp3.name).to appear_before(comp.name)
   end
+
+  it 'has filtering for year created' do
+    museum = Museum.create!(
+      name: 'The Louvre',
+      free_admission: false,
+      donation_revenue: 12_345_678
+    )
+
+    comp = Composition.create!(
+      name: 'The Starry Night',
+      artist: 'van Gogh',
+      on_display: true,
+      year_made: 1889,
+      museum_id: museum.id
+    )
+
+    comp2 = Composition.create!(
+      name: 'The Boulevard Montmarte in Paris',
+      artist: 'Pissarro',
+      on_display: false,
+      year_made: 1897,
+      museum_id: museum.id
+    )
+
+    comp3 = Composition.create!(
+      name: 'Thatched Cottages and Houses',
+      artist: 'van Gogh',
+      on_display: true,
+      year_made: 1890,
+      museum_id: museum.id
+    )
+
+    comp4 = Composition.create!(
+      name: 'The Return of the Prodigal Son',
+      artist: 'Rembrandt',
+      on_display: true,
+      year_made: 1889,
+      museum_id: museum.id
+    )
+
+    visit "/museums/#{museum.id}/compositions"
+
+    fill_in 'earliest_year_made', with: 1890
+
+    click_button 'Apply'
+
+    expect(page).to have_content(comp2.name)
+    expect(page).to have_content(comp3.name)
+
+    expect(page).to_not have_content(comp.name)
+    expect(page).to_not have_content(comp4.name)
+  end
 end

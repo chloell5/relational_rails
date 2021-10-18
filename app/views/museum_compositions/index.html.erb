@@ -18,6 +18,11 @@
   <%= link_to 'Delete Composition', "/compositions/#{composition.id}", method: :delete %></p>
   <br>
 <% end %>
+<%= form_with url: "/museums/#{@museum.id}/compositions?filter=year", method: :get, local: true do |form| %>
+<%= form.label 'Earliest Year Created:' %>
+<%= form.number_field :earliest_year_made %>
+<%= form.submit 'Apply',class: 'btn btn-secondary' , id: 'submit-button' %>
+<% end %>
 <%= link_to 'Sort Alphabetically by Name', "/museums/#{@museum.id}/compositions?order=alpha" %>
 <br>
 <%= link_to 'New Composition', "/museums/#{@museum.id}/compositions/new" %>
