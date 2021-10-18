@@ -1,17 +1,17 @@
 <h1><%= @museum.name %></h1>
+  <b>Free Admission?: </b>
+    <%= @museum.free_admission %>
+    <br>
+  <b>Donation Revenue: </b>
+    $<%= @museum.donation_revenue %>
+    <br>
+  <b>Compositions: </b>
+    <%= @museum.count %>
+    <br>
 
-<p>
-  <b>Free Admission?:
-  </b><%= @museum.free_admission %></p>
-<p>
-  <b>Donation Revenue:
-  </b>$<%= @museum.donation_revenue %></p>
-<p>
-  <b>Compositions:
-  </b><%= @museum.count %></p>
-<p>
-  <%= link_to 'Museum Compositions', "/museums/#{@museum.id}/compositions" %></p>
-<p>
-  <%= link_to 'Update Museum', "/museums/#{@museum.id}/edit" %></p>
-<p>
-  <%= link_to 'Delete Museum', "/museums/#{@museum.id}", method: :delete %></p>
+    <br>
+  <%= link_to 'Museum Compositions', "/museums/#{@museum.id}/compositions" %>
+    <br>
+  <%= link_to 'Update Museum', "/museums/#{@museum.id}/edit" %>
+    <br>
+  <%= link_to 'Delete Museum', "/museums/#{@museum.id}", method: :delete %>

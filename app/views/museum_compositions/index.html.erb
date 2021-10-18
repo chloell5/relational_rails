@@ -1,28 +1,33 @@
 <h1><%= @museum.name %></h1>
-<% @compositions.each do |composition| %>
-  <p>
-    <b>Piece:</b>
-    <%= composition.name %></p>
-  <p>
+
+  <% @compositions.each do |composition| %>
+    <b>Piece: </b>
+      <%= composition.name %>
+      <br>
     <b>Artist:</b>
-    <%= composition.artist %></p>
-  <p>
-    <b>On Display?:
-    </b><%= composition.on_display %></p>
-  <p>
-    <b>Year Made:
-    </b><%= composition.year_made %></p>
-  <p>
-    <%= link_to 'Update Composition', "/compositions/#{composition.id}/edit" %></p>
-  <p>
-  <%= link_to 'Delete Composition', "/compositions/#{composition.id}", method: :delete %></p>
+      <%= composition.artist %>
+      <br>
+    <b>On Display?: </b>
+      <%= composition.on_display %>
+      <br>
+    <b>Year Made: </b>
+      <%= composition.year_made %>
+      <br>
+    <%= link_to 'Update Composition', "/compositions/#{composition.id}/edit" %>
+    <br>
+    <%= link_to 'Delete Composition', "/compositions/#{composition.id}", method: :delete %>
+    <br>
+    <br>
+  <% end %>
+
   <br>
-<% end %>
-<%= form_with url: "/museums/#{@museum.id}/compositions?filter=year", method: :get, local: true do |form| %>
-<%= form.label 'Earliest Year Created:' %>
-<%= form.number_field :earliest_year_made %>
-<%= form.submit 'Apply',class: 'btn btn-secondary' , id: 'submit-button' %>
-<% end %>
-<%= link_to 'Sort Alphabetically by Name', "/museums/#{@museum.id}/compositions?order=alpha" %>
-<br>
-<%= link_to 'New Composition', "/museums/#{@museum.id}/compositions/new" %>
+  <%= form_with url: "/museums/#{@museum.id}/compositions?filter=year", method: :get, local: true do |form| %>
+    <%= form.label 'Earliest Year Created:' %>
+    <%= form.number_field :earliest_year_made %>
+    <%= form.submit 'Apply',class: 'btn btn-secondary' , id: 'submit-button' %>
+  <% end %>
+
+  <%= link_to 'Sort Alphabetically by Name', "/museums/#{@museum.id}/compositions?order=alpha" %>
+
+  <br>
+  <%= link_to 'New Composition', "/museums/#{@museum.id}/compositions/new" %>

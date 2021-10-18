@@ -1,15 +1,16 @@
 <h1><%= @composition.name %></h1>
 
-<p>
   <b>Artist:</b>
-  <%= @composition.artist %></p>
-<p>
-  <b>On Display?:
-  </b><%= @composition.on_display %></p>
-<p>
-  <b>Year Made:
-  </b><%= @composition.year_made %></p>
-<p>
-  <%= link_to 'Update Composition', "/compositions/#{@composition.id}/edit" %></p>
-  <p>
-    <%= link_to 'Delete Composition', "/compositions/#{@composition.id}", method: :delete %></p>
+    <%= @composition.artist %>
+    <br>
+  <b>On Display?: </b>
+    <%= @composition.on_display %>
+    <br>
+  <b>Year Made: </b>
+    <%= @composition.year_made %>
+    <br>
+
+  <%= link_to 'Update Composition', "/compositions/#{@composition.id}/edit" %>
+  <br>
+  
+  <%= link_to 'Delete Composition', "/compositions/#{@composition.id}", method: :delete %>

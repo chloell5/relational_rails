@@ -1,13 +1,14 @@
 <h1>Edit
   <%= @composition.name %></h1>
-<%= form_with url: "/compositions/#{@composition.id}", method: :patch, local: true do |form| %>
-<%= form.label :name %>
-<%= form.text_field :name, value: @composition.name %><br>
-<%= form.label :artist %>
-<%= form.text_field :artist, value: @composition.artist %><br>
-<%= form.label :on_display %>
-<%= form.check_box :on_display, value: @composition.on_display %><br>
-<%= form.label :year_made %>
-<%= form.number_field :year_made, value: @composition.year_made %><br>
-<%= form.submit 'Update Composition' %>
-<% end %>
+
+  <%= form_with url: "/compositions/#{@composition.id}", method: :patch, local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name, value: @composition.name %><br>
+    <%= form.label :artist %>
+    <%= form.text_field :artist, value: @composition.artist %><br>
+    <%= form.label :on_display %>
+    <%= form.check_box :on_display, value: @composition.on_display %><br>
+    <%= form.label :year_made %>
+    <%= form.number_field :year_made, value: @composition.year_made %><br>
+    <%= form.submit 'Update Composition' %>
+  <% end %>
