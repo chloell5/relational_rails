@@ -1,24 +1,22 @@
 <h1>Compositions</h1>
     <% @compositions.each do |composition| %>
-      <% if composition.on_display == true %>
-        Name:
-          <%= link_to composition.name, "/compositions/#{composition.id}" %>
-          <br>
-        Artist:
-          <%= composition.artist %>
-          <br>
-        On Display?:
-          <%= composition.on_display %>
-          <br>
-        Year Made:
-          <%= composition.year_made %>
-          <br>
+      Name:
+        <%= link_to composition.name, "/compositions/#{composition.id}" %>
+        <br>
+      Artist:
+        <%= composition.artist %>
+        <br>
+      On Display?:
+        <%= composition.on_display %>
+        <br>
+      Year Made:
+        <%= composition.year_made %>
+        <br>
 
-        <%= link_to "Update #{composition.name}", "/compositions/#{composition.id}/edit" %>
+      <%= link_to "Update #{composition.name}", "/compositions/#{composition.id}/edit" %>
 
-        <br>
-        <%= link_to "Delete #{composition.name}", "/compositions/#{composition.id}", method: :delete %>
-        <br>
-        <br>
-      <% end %>
+      <br>
+      <%= link_to "Delete #{composition.name}", "/compositions/#{composition.id}", method: :delete %>
+      <br>
+      <br>
     <% end %>
