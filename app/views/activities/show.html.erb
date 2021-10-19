@@ -1,13 +1,10 @@
-<h1><%= @activities.name %></h1>
+<h1><%= @activity.name %></h1>
 
-<p><b>Name: <%= @activities.name %></p>
-<p><b>Day: <%= @activities.day %></p>
-<p><b>Time: <%= @activities.time %></p>
-<p><b>Maximum Number: <%= @activities.max_number %></p>
-<p><b>Drop-In: <%= @activities.drop_in %></p>
-<p><b>Gym ID: <%= @activities.gym_id %></p>
+<p><b>Name: <%= @activity.name %></p>
+<p><b>Day: <%= @activity.day %></p>
+<p><b>Time: <%= @activity.time %></p>
+<p><b>Maximum Number: <%= @activity.max_number %></p>
+<p><b>Drop-In: <%= @activity.drop_in %></p>
+<p><b>Gym ID: <%= @activity.gym_id %></p>
 
-
-
-
-  
+<p><%= link_to 'Update Activity', "/activities/#{@activity.id}/edit" %></p>
