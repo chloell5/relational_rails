@@ -1,6 +1,6 @@
 class CompositionsController < ApplicationController
   def index
-    @compositions = Composition.on_display
+    @compositions = Composition.display
   end
 
   def new; end

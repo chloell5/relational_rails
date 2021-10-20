@@ -1,7 +1,7 @@
 class Composition < ApplicationRecord
   belongs_to :museum
 
-  scope :on_display, -> {
+  scope :display, -> {
     where(on_display: true)
   }
 
