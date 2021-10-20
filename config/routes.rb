@@ -14,17 +14,23 @@ Rails.application.routes.draw do
 
   get '/gyms', to: 'gyms#index'
   get '/gyms/new', to: 'gyms#new'
-  post '/gyms', to: 'gyms#create'
   get '/gyms/:id/edit', to: 'gyms#edit'
   get '/gyms/:id', to: 'gyms#show'
+
+  get '/gyms/:id/activities', to: 'gym_activities#index'
+  get '/gyms/:id/activities/new', to: 'gym_activities#new'
+  post '/gyms/:id/activities', to: 'gym_activities#create'
+
+  post '/gyms', to: 'gyms#create'
   patch '/gyms/:id', to: 'gyms#update'
+  delete '/gyms/:id', to: 'gyms#destroy'
+
 
   get '/activities', to: 'activities#index'
-  get '/activities', to: 'activities#show'
   get '/activities/:id', to: 'activities#show'
-
-  get '/gyms/:id/activities', to: 'activities#index'
-  #get '/gyms/:id/activities', to: 'gym_activities#index'
+  get '/activities/:id/edit', to: 'activities#edit'
+  patch '/activities/:id', to: 'activities#update'
+  delete '/activities/:id', to: 'activities#destroy'
 
   get '/compositions', to: 'compositions#index'
   get '/compositions/:id', to: 'compositions#show'

@@ -1,0 +1,16 @@
+<h1>Update Activity</h1>
+
+<%= form_with url: "/activities/#{@activity.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br>
+  <%= form.label :day %>
+  <%= form.text_field :day %><br>
+  <%= form.label :time %>
+  <%= form.text_field :time %><br>
+  <%= form.label :Max_number %>
+  <%= form.number_field :max_number %><br>
+  <%= form.label :drop_in %>
+  <%= form.check_box :drop_in %><br>
+
+  <%= form.submit 'Update Activity' %>
+<% end %>

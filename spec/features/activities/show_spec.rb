@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe "Activities show page" do
 
   it 'can show the activity by id and show attributes' do
-    gym_1 = Gym.create!(name: 'Peak Fitness', location: 'Buena Vista', open: true, rank: 1, id: 1)
+    gym_1 = Gym.create!(name: 'Peak Fitness', location: 'Buena Vista', open: true, rank: 1)
     gym_2 = Gym.create!(name: 'Yoga Tonic', location: 'Salida', open: true, rank: 1)
 
     time = Time.new(2021, 4, 2)
 
-    activity_1 = Activity.create!(name: 'Yoga', day: 'Tuesday', time: time, max_number: 15, drop_in: true, gym_id: 1)
-    activity_2 = Activity.create!(name: 'Intensity Train', day: 'Thursday', time: '8:15', max_number: 10, drop_in: true, gym_id: 1)
+    activity_1 = Activity.create!(name: 'Yoga', day: 'Tuesday', time: time, max_number: 15, drop_in: true, gym_id: gym_1.id)
+    activity_2 = Activity.create!(name: 'Intensity Train', day: 'Thursday', time: '8:15', max_number: 10, drop_in: true, gym_id: gym_1.id)
 
     visit "/activities/#{activity_1.id}"
     expect(page).to have_content(activity_1.name)
@@ -24,6 +24,17 @@ RSpec.describe "Activities show page" do
     expect(page).to_not have_content(activity_2.time)
   end
 
+  it 'has a show activity link' do
+    gym_1 = Gym.create!(name: 'Peak Fitness', location: 'Buena Vista', open: true, rank: 1)
+
+    time = Time.new(2021, 4, 2)
+    activity_1 = Activity.create!(name: 'Yoga', day: 'Tuesday', time: time, max_number: 15, drop_in: true, gym_id: gym_1.id)
+    #activity_2 = Activity.create!(name: 'Intensity Train', day: 'Thursday', time: '8:15', max_number: 10, drop_in: true, gym_id: 1)
+
+    visit "/gyms/#{gym_1.id}/activities"
+    click_link 'Show Activity'
+    expect(page).to have_current_path("/activities/#{activity_1.id}")
+  end
 
 
 end

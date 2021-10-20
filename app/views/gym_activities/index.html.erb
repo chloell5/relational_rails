@@ -1,10 +1,22 @@
 <h1><%= @gym.name %></h1>
 <% @activities.each do |activity| %>
-
+<p><b>Name: </b> <%= activity.name %></p>
 <p><b>Day: </b> <%= activity.day %></p>
 <p><b>Time: </b><%= activity.time %></p>
 <p><b>Maximum Number: </b><%= activity.max_number %></p>
 <p><b>Drop-In: </b><%= activity.drop_in %></p>
 <p><b>Gym ID: </b><%= activity.gym_id %></p>
+<p><%= link_to 'Show Activity', "/activities/#{activity.id}" %></p><br>
+<p><%= link_to "Delete #{activity.name}", "/activities/#{activity.id}", method: :delete %><br>
+
+
+<% end %>
+<%= link_to 'Alphabetize Activities', "/gyms/#{@gym.id}/activities?sort=alph" %>
 <br>
+<%= link_to 'New Activity', "/gyms/#{@gym.id}/activities/new" %>
+<br>
+<%= form_with url: "/gyms/#{@gym.id}/activities?filter=max_num", method: :get, local: true do |form| %>
+<%= form.label 'Maximum Number' %>
+<%= form.number_field :max_num %>
+<%= form.submit 'Submit',class: 'btn btn-secondary' , id: 'submit-button' %>
 <% end %>
