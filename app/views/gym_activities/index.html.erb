@@ -9,5 +9,6 @@
 <p><%= link_to 'Show Activity', "/activities/#{activity.id}" %></p>
 
 <% end %>
-
+<%= link_to 'Alphabetize Activities', "/gyms/#{@gym.id}/activities?sort=alph" %>
+<br>
 <%= link_to 'New Activity', "/gyms/#{@gym.id}/activities/new" %>

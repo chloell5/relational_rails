@@ -3,10 +3,6 @@ class ActivitiesController < ApplicationController
     @activities = Activity.all
   end
 
-  def show
-    @activity = Activity.find(params[:id])
-  end
-
   def edit
     @activity = Activity.find(params[:id])
   end
@@ -15,6 +11,16 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @activity.update(activity_params)
     redirect_to "/activities/#{@activity.id}"
+  end
+
+  def destroy
+    activity = Activity.find(params[:id])
+    activity.destroy
+    redirect_to '/activities'
+  end
+
+  def show
+    @activity = Activity.find(params[:id])
   end
 
   private

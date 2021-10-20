@@ -22,6 +22,12 @@ class GymsController < ApplicationController
     redirect_to "/gyms/#{@gym.id}"
   end
 
+  def destroy
+    gym = Gym.find(params[:id])
+    gym.destroy
+    redirect_to '/gyms'
+  end
+
   def show
     @gym = Gym.find(params[:id])
     @activity_count = @gym.activities.count

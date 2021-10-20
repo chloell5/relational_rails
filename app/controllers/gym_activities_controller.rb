@@ -2,6 +2,9 @@ class GymActivitiesController < ApplicationController
   def index
     @gym = Gym.find_by(id: params[:id])
     @activities = @gym.activities
+    if params[:sort] == "alph"
+      @activities = @gym.activities.sort_alphabetically
+    end
   end
 
   def new

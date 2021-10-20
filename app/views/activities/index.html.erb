@@ -7,5 +7,7 @@
   <p><b>Maximum Number: <%= activity.max_number %><br>
   <p><b>Drop-In: <%= activity.drop_in %><br>
   <p><b>Gym ID: <%= activity.gym_id %><br><br>
-  
+  <%= link_to "Edit #{activity.name}", "/activities/#{activity.id}/edit" %>
+  <br>
+  <%= link_to "Delete #{activity.name}", "/activities/#{activity.id}", method: :delete %>
 <% end %>

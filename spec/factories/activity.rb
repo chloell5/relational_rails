@@ -5,7 +5,8 @@ FactoryBot.define do
     time {Faker::Time.between(from: DateTime.now, to: DateTime.now + 30)}
     max_number {Faker::Number.between(from: 10, to: 20)}
     drop_in {Faker::Boolean.boolean}
-    gym_id {Faker::Number.between(from: 1, to: 5)}
+    association :gym
+    #gym_id {Faker::Number.between(from: 1, to: 5)}
 
   end
 end

@@ -34,5 +34,16 @@ RSpec.describe Gym do
     expect(current_path).to eq("/gyms/#{gym_1.id}/activities")
   end
 
+  it 'shows a link that takes me to the gym edit page' do
+    gym_1 = Gym.create!(name: 'Peak Fitness', location: 'Buena Vista', open: true, rank: 1)
+    time = Time.new(2021, 4, 2)
+
+    activity_1 = Activity.create!(name: 'Yoga', day: 'Tuesday', time: time, max_number: 15, drop_in: true, gym_id: gym_1.id)
+    activity_2 = Activity.create!(name: 'Intensity Train', day: 'Thursday', time: '8:15', max_number: 10, drop_in: true, gym_id: gym_1.id)
+    visit '/gyms/'
+    expect(page).to have_link('Edit Peak Fitness')
+    click_on 'Edit Peak Fitness'
+    expect(current_path).to eq("/gyms/#{gym_1.id}/edit")
+  end
 
 end

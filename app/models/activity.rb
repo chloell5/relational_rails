@@ -10,3 +10,7 @@ class Activity < ApplicationRecord
   end
 
 end
+
+# scope :display, -> {
+#     where(drop_in: true)
+#   }
