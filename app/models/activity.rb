@@ -6,11 +6,11 @@ class Activity < ApplicationRecord
   end
 
   def self.sort_alphabetically
-    order(:name).pluck(:name)
+    order(:name)
   end
 
-end
+  scope :filter_by_max_number,
+  lambda{|max_number| where('max_number > ?', max_number)}
 
-# scope :display, -> {
-#     where(drop_in: true)
-#   }
+
+end

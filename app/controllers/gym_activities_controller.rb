@@ -5,6 +5,9 @@ class GymActivitiesController < ApplicationController
     if params[:sort] == "alph"
       @activities = @gym.activities.sort_alphabetically
     end
+    if params[:max_num]
+      @activities = @gym.activities.filter_by_max_number(params[:max_num])
+    end 
   end
 
   def new
