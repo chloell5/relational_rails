@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = Activity.all
+    @activities = Activity.drop_in_true
+
   end
 
   def edit
