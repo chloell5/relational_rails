@@ -6,3 +6,4 @@
 <br>
 <p><%= link_to 'Gym Activities', "/gyms/#{@gym.id}/activities" %></p>
 <p><%= link_to 'Update Gym', "/gyms/#{@gym.id}/edit" %></p>
+<p><%= link_to "Delete #{@gym.name}", "/gyms/#{@gym.id}", method: :delete %></p>

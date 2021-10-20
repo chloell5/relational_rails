@@ -6,7 +6,11 @@
 <p><b>Maximum Number: </b><%= activity.max_number %></p>
 <p><b>Drop-In: </b><%= activity.drop_in %></p>
 <p><b>Gym ID: </b><%= activity.gym_id %></p>
-<br>
-<% end %>
+<p><%= link_to 'Show Activity', "/activities/#{activity.id}" %></p>
+<p><%= link_to "Delete #{activity.name}", "/activities/#{activity.id}", method: :delete %>
 
+
+<% end %>
+<%= link_to 'Alphabetize Activities', "/gyms/#{@gym.id}/activities?sort=alph" %>
+<br>
 <%= link_to 'New Activity', "/gyms/#{@gym.id}/activities/new" %>
